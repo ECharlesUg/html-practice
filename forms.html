@@ -44,9 +44,8 @@
          optional attributes are midlength to define the minimum length entered b the user and maxlength 
          to define the maximum
          -->
-
-        <!--<label for="email-address">Please Enter your Email Address:</label>
-        <input type="email" name="email" id="email-address" minlength="6" maxlength="40" /> -->
+        <label for="email-address">Please Enter your Email Address:</label>
+        <input type="email" name="email" id="email-address" minlength="6" maxlength="40" /> 
 
       <br />
       <br />
@@ -81,13 +80,13 @@
         this is also an input where the label typically shows up after the input.
       -->
       <h3>Genre</h3>
-      <input type="radio" id="pop" name="fav_genre" value="pop">
+      <input type="radio" id="pop" name="fav_genre" value="pop" />
       <label for="pop">Pop</label>
       <br />
-      <input type="radio" id="R&B" name="fav_genre" value="R&B">
+      <input type="radio" id="R&B" name="fav_genre" value="R&B" />
       <label for="R&B">R&B</label>
       <br />
-      <input type="radio" id="Afrobeat" name="fav_genre" value="Afrobeat">
+      <input type="radio" id="Afrobeat" name="fav_genre" value="Afrobeat" />
       <label for="Afrobeat">Afrobeat</label>
       <br />
 
@@ -113,13 +112,13 @@
 
          -->
       <h3>Mood</h3>
-      <input type="checkbox" id="mood" name="good" value="mood">
+      <input type="checkbox" id="mood" name="good" value="mood" />
       <label for="good">Good</label>
       <br />
-      <input type="checkbox" id="mood" name="meh" value="mood">
+      <input type="checkbox" id="mood" name="meh" value="mood" />
       <label for ="meh">Meh</label>
       <br />
-      <input type="checkbox" id="mood" name="dissapointed" value="mood">
+      <input type="checkbox" id="mood" name="dissapointed" value="mood" />
       <label for="dissapointed">Dissapointed</label>
       <br />
       <p>how do you feel about the website :)</p> 
@@ -180,7 +179,7 @@
       -->
       <h4>Input Button</h4>
 
-      <input type="button" onclick="alert('Thank you')" value="Click Me!">
+      <input type="button" onclick="alert('Thank you')" value="Click Me!" />
       <br />
       <br />
 
@@ -195,7 +194,7 @@
         You can use the min and max attributes to add numeric restrictions in the input field
       -->
       <label for="quantity">Rate The Website(1-5):</label>
-      <input type="number" id="quantity" name="quantity" min="1" max="5">
+      <input type="number" id="quantity" name="quantity" min="1" max="5" />
       <br />
       <br />
        
@@ -203,9 +202,16 @@
       <!--
        The input type="submit" defines a button for submitting form data to a form-handler:
        The input type="reset" defines a reset button that resets all form values to their default values:
+       This input has to be inside the form tag!!!
+       type="submit", name, and id are all required. value is optional for the same reason as reset.
       -->
-      <input type="submit" value="Submit">
-      <input type="reset">
+      <input type="submit" value="Submit" />
+
+      <!--
+        This is an example of a reset button input. type="reset", name and id are a;; required.
+        value is an optional attribute for if you want to change the default text on the button.
+      -->
+      <input type="reset" name="ClearForm" id="clear" value="Click this to clear all inputs" />
       <p>If you click "Submit", the form-data will be sent to a creator</p>
       <p>if you click reset it will be reset to default</p>
       <br /> 
