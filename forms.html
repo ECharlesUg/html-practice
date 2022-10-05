@@ -8,14 +8,228 @@
 </head>
 <body>
     <h1>Afrobeat Suggestions</h1>
-    <!--Get for insecure stuff and information and Post for secure information and stuff-->
-    <form name="afrobeat-Suggestions" id="afrobeats" method="get">
+    <!--
+            The form tag is used to create as container where al the inputs for a form must be put inside. The attributes that are
+            required are name, id and method.
+
+            name gives some descriptive information about what form will be used for.
+            id allows us to reference this form later in fieldsets and other areas of out code.
+
+            method has two typical values: get and post. Get is used for forms that do 
+            not ask for personal information(search bars, etc). Post is used for forms
+            that ask for personal info(login and signup pages etc)
+            
+        -->
+    <form name="afrobeat-Suggestions" id="afrobeats" method="get" action="index.html">
+
+        <!--
+          This is a text input. type="text", name and id are all required attributes.
+          The required attribute is only necessary when you want to make sure the user has to fill in the input befiore submitting 
+          the form.
+
+          The type attribute defines the type of input.
+          The name attribute defines the variable name that would be used for the input when the data gets passed to the server
+          (requires back-end scripting, which is beyond the scope of this course)
+          The id attribute allows us to reference the input from the label and from other parts of our code.
+
+          All inputs need a label with the for attribute that links the label to the input using the input's id attribute.
+          When an input is required, it is important to include the word required in the label's text   
+        -->
         <label for="afrobeat-pop">Please enter the afrobeat music you suggest i listen to [required]:</label>
-      <input type="text" name="afrobeats" id="afrobeat-pop" required />
+        <input type="text" name="afrobeats" id="afrobeat-pop" required />
+
+        <!--
+         This is an email input ir requires type, name and id.
+        
+         optional attributes are midlength to define the minimum length entered b the user and maxlength 
+         to define the maximum
+         -->
+
+        <!--<label for="email-address">Please Enter your Email Address:</label>
+        <input type="email" name="email" id="email-address" minlength="6" maxlength="40" /> -->
+
       <br />
       <br />
-      <label for="password">Please enter your password</label>
-      <input type="password" name="userPassword" id="password" />
+
+      <!--
+        This is a password input. type="password", name and id are all required attributes.
+        As always, each input needs a label with thr for attribute to link the labe; to an input.
+
+        I have commentes this input out because i will not be needing a password for this form.
+      -->
+
+      <!--<label for="password">Please enter your password</label>
+      <input type="password" name="userPassword" id="password"  minlength="10" /> -->
+
+
+      <label for="name">Artist [required]:</label>
+      <br />
+      <input type="text" id="Uname" name="Uname" value="" required />
+      <br />
+
+
+     
+      <!--
+        The input type="radio" defines a radio button
+
+        these button is good when u want the user to select one option from a list of options
+
+        name,id and value ar all required attributes. the value should represent the chice
+        the user has selected. Note, most importantly, the name attricute for each related radio button should be 
+        exactly the same.
+
+        this is also an input where the label typically shows up after the input.
+      -->
+      <h3>Genre</h3>
+      <input type="radio" id="pop" name="fav_genre" value="pop">
+      <label for="pop">Pop</label>
+      <br />
+      <input type="radio" id="R&B" name="fav_genre" value="R&B">
+      <label for="R&B">R&B</label>
+      <br />
+      <input type="radio" id="Afrobeat" name="fav_genre" value="Afrobeat">
+      <label for="Afrobeat">Afrobeat</label>
+      <br />
+
+
+      <!--
+       The input type="checkbox" defines a checkbox.
+
+      -->
+      <!--A fieldset set is an area in your form where ypu put inputs that are more related to each other than
+      they are related to each other inputs in the form(i.e, list of travel items is more related toe ach other
+       that the country the person is reccomending)
+      
+      form is an important attribute to link the fieldset to the form it is related to-->
+
+      <fieldset form="afrobeat">
+        <!--A legend describes how the inputs inside the fieldset are all relatedS-->
+        <legend>what music would u recommend i listen to</legend>
+        <!--this is a checkbox inpuit. Note, this is an input where the input typically comes before the label.
+        
+          type="checkbox", name and id are all required. value is also required and 
+          provides its value to the server if the user checks that box and submits the form, in this case what would
+          be passed to the server is mood =good.
+
+         -->
+      <h3>Mood</h3>
+      <input type="checkbox" id="mood" name="good" value="mood">
+      <label for="good">Good</label>
+      <br />
+      <input type="checkbox" id="mood" name="meh" value="mood">
+      <label for ="meh">Meh</label>
+      <br />
+      <input type="checkbox" id="mood" name="dissapointed" value="mood">
+      <label for="dissapointed">Dissapointed</label>
+      <br />
+      <p>how do you feel about the website :)</p> 
+      <br />
+      </fieldset>
+
+
+      <!--
+        this is a select input, which is essentially a dropdoown input.
+
+        name and id are required attributes for a selct input.
+
+        select inputs are widely used but can lead to accesibility issues.
+        if u an accomplish the same thing you want to do with a different
+        type of input(i.e radio buttons, text-based, e.t.c) you should use
+        the other method of getting this information.
+      -->
+      <label for="country">which country is this location in?</label>
+      <select name="countrySelect" id="country" required>
+      <!-- 
+        optgroups let u group inside your select input.
+        lavel is required so that the optgroup displays what the category 
+        is for the inputs that are inside that group.
+      -->
+      <optgroup label="North America">
+        <!-- The option tag is the actual option that a user can select.
+        It requires the value attribute for when the selction gets sent to
+        the server.
+        -->
+        <option value=" canada">Canada </option>
+        <option value-="unitedStates">U.S.A</option>
+      </optgroup>
+      <optgroup label="south america">
+        <option value="brazil">Brazil</option>
+        <option value="chile">Chile</option>
+      </optgroup>
+      </select>
+    
+
+      <!--
+        The textarea tag creates a large text box that u would typically see for
+        an additional comments: section in a form. This allows a user to enter multiple lines of information for a form
+
+        name and id are required attributes.
+        Highly reccomended attirubutes are rows and cols.
+        rows defines a number of lines a user can type before a scroll bar appears. 
+        cl defines the number of characters accrss a user can type before their
+        input goes to the next line.
+      -->
+      <label for="comments">Additional Comments:</label>
+      <br />
+      <textarea id="comments" name="comments" rows="5" cols="33"> </textarea>
+      <br />
+
+
+      <!--
+      The <input type="button"> defines a clickable button
+      -->
+      <h4>Input Button</h4>
+
+      <input type="button" onclick="alert('Thank you')" value="Click Me!">
+      <br />
+      <br />
+
+      <!--this is a telephone input, type="tel" name and id are all reqiyired.
+      minlength and maxlength can be good attributes to use for basic error checking-->
+      <label for="telephone">please enter your telephone number [example: 1-567-678-9876] :</label>
+      <input type="tel" name="userTel" id="telephone" minlength="14" maxlength="22" />
+
+
+      <!--
+        The input type="number" defines a numeric input field.
+        You can use the min and max attributes to add numeric restrictions in the input field
+      -->
+      <label for="quantity">Rate The Website(1-5):</label>
+      <input type="number" id="quantity" name="quantity" min="1" max="5">
+      <br />
+      <br />
+       
+
+      <!--
+       The input type="submit" defines a button for submitting form data to a form-handler:
+       The input type="reset" defines a reset button that resets all form values to their default values:
+      -->
+      <input type="submit" value="Submit">
+      <input type="reset">
+      <p>If you click "Submit", the form-data will be sent to a creator</p>
+      <p>if you click reset it will be reset to default</p>
+      <br /> 
+
+
+    <!-- this is an example of an a(anchor tag), which allows us to link to another web page-->
+    <a href="iframes-and-list.html" target="_blank" >Iframes and Lists</a>
+    <br />
+    <br />
+    <a href="headings-and-paragraph.html">Headings and Paragraph</a>
+    <br />
+    <br />
+    <a href="links-and-images.html">Links and Images</a>
+    <br />
+    <br />
+    <a href="index.html">Home Page</a>
+
+     
+
+
+   
+      
+
+     
     </form>
 </body>
 </html>
